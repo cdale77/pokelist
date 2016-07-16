@@ -3,6 +3,8 @@ class CreatePokemons < ActiveRecord::Migration[5.0]
     create_table :pokemons do |t|
       t.belongs_to :pokemon_type, index: true
       t.string :name, default: ""
+
+      t.timestamps
     end
   end
 end

@@ -13,12 +13,16 @@
 ActiveRecord::Schema.define(version: 20160716190607) do
 
   create_table "pokemon_types", force: :cascade do |t|
-    t.string "name", default: ""
+    t.string   "name",       default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "pokemons", force: :cascade do |t|
-    t.integer "pokemon_type_id"
-    t.string  "name",            default: ""
+    t.integer  "pokemon_type_id"
+    t.string   "name",            default: ""
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["pokemon_type_id"], name: "index_pokemons_on_pokemon_type_id"
   end
 
